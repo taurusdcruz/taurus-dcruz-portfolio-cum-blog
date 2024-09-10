@@ -1,0 +1,23 @@
+# Node modules
+/node_modules/
+
+# Build output
+/dist/
+*.log
+
+# Environment variables
+.env
+
+# MacOS specific files
+.DS_Store
+
+# VSCode specific files
+.vscode/
+
+# Other OS-specific files
+Thumbs.db
+
+# Debugger config
+/.idea/
+*.sublime-workspace
+*.sublime-project
