@@ -1,0 +1,51 @@
+{
+  "name": "portfolio-backend",
+  "version": "1.0.0",
+  "description": "Backend for portfolio cum blog website",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "express": "^4.0.0",
+    "mongoose": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "ts-node": "^10.0.0",
+    "nodemon": "^2.0.0",
+    "eslint": "^8.0.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
