@@ -1,5 +1,7 @@
 const path = require('path');
 
+const CspPlugin = require('@melloware/csp-webpack-plugin');
+
 module.exports = {
   mode: 'development', // Set to 'production' for optimized builds
   entry: './src/index.tsx', // Assuming your index file is in src/index.tsx
@@ -41,15 +43,23 @@ module.exports = {
   },
   plugins: [
     // Add plugins as needed, e.g., HTMLWebpackPlugin, MiniCssExtractPlugin
+    new CspPlugin({
+      'default-src': ['self'],
+      'style-src': ['self', 'unsafe-inline', 'https://fonts.googleapis.com'],
+      'font-src': ['self', 'https://fonts.gstatic.com/'],
+    })
   ],
   devServer: {
+    headers : {
+      'Content-Security-Policy' : "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com;"
+    },
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, 'dist'),
     },
     compress: true,
     port: 3000,
     historyApiFallback: true,
     open: true,
-    hot: true,
+    hot: true
   },
 };

@@ -1,0 +1,68 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .menu-toggle {
+    display: none;
+    padding: 10px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav.expanded {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .nav li {
+    text-align: center;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .social-login {
+    /* Add your styles for the social login section */
+  }
+  
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav {
+      display: none;
+    }
+  
+    .nav.expanded {
+      display: block;
+    }
+  }
