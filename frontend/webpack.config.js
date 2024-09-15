@@ -8,7 +8,7 @@ module.exports = {
   output: {
     publicPath: '/',
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
@@ -54,12 +54,13 @@ module.exports = {
       'Content-Security-Policy' : "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com;"
     },
     static: {
-      directory: path.join(__dirname, 'dist'),
+      directory: path.join(__dirname, 'public'),
     },
     compress: true,
     port: 3000,
     historyApiFallback: true,
     open: true,
-    hot: true
+    hot: true,
+    liveReload: true
   },
 };
