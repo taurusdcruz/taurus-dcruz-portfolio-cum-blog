@@ -15,17 +15,15 @@ const App: React.FC = () => {
     <AuthContext.Provider value={{
       loggedInUser, setLoggedInUser
     }}>
-      <>
+      <Router>
         <Header />
-        <Router>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/blog/:id" element={<BlogPost />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/manage-blog" element={<BlogPostForm />} />
-          </Routes>
-        </Router>
-      </>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/manage-blog" element={<BlogPostForm />} />
+        </Routes>
+      </Router>
     </AuthContext.Provider>
   );
 };
